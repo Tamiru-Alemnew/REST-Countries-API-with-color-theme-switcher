@@ -1,10 +1,10 @@
 import Header from "../components/Header/Header"
-import Home from "../components/Home/Home"
+import Main from "../components/Main/Main"
 export default function Home() {
   return (
     <div>
       <Header />
-      <Home />
+      <Main />
     </div>
   )
 }

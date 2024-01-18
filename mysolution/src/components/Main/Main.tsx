@@ -22,7 +22,7 @@ function Home() {
     }
   }, [isSuccess]);
 
-  const handleSelectChange = (e) => {
+  const handleSelectChange = (e:any) => {
     const region = e.target.value;
     setParam(region);
   };
@@ -65,8 +65,8 @@ function Home() {
       </div>
       <div className="flex flex-wrap gap-7 p-5 justify-center dark:bg-gray-700 dark:text-gray-200">
         {filteredCountries
-          ?.filter((c) => param === "All" || c.continents.includes(param))
-          .map((country) => (
+          ?.filter((c:any) => param === "All" || c.continents.includes(param))
+          .map((country:any) => (
             <Countrycard
               key={country.name.common}
               name={country.name.common}

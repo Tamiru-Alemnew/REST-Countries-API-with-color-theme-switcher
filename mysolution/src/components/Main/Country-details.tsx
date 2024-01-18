@@ -68,7 +68,13 @@ function Countrydetails() {
                 <p className="font-semibold">
                   Currencies:{" "}
                   <span className="font-normal">
-                    {Object.values(Country[0]?.currencies)[0]?.name}
+                    {
+                      (
+                        Object.values(Country[0]?.currencies)[0] as {
+                          name?: string;
+                        }
+                      )?.name
+                    }
                   </span>
                 </p>
                 <p className="font-semibold ">
@@ -84,7 +90,7 @@ function Countrydetails() {
                 Border Countries:{" "}
               </p>
               <div className="flex">
-                {Country[0]?.borders?.map((borderCountry) => (
+                {Country[0]?.borders?.map((borderCountry:any) => (
                   <button
                     key={borderCountry}
                     className="shadow-md mx-3 py-2 px-6"

@@ -31,10 +31,10 @@ function Home() {
 
   return (
     <div className="">
-      <div className="flex justify-between">
-        <div className="relative shadow-md m-6 max-w-[21rem] flex">
+      <div className="flex flex-col md:flex-row justify-between dark:bg-gray-700 dark:text-gray-200">
+        <div className="relative shadow-md m-6 max-w-[21rem] flex dark:bg-gray-600 dark:text-gray-200 rounded-md">
           <input
-            className=" m-2 ml-12 flex-grow px-4  rounded outline-none"
+            className=" m-2 ml-12 h-14 flex-grow px-4  rounded outline-none dark:bg-gray-600 dark:text-gray-200"
             value={Search}
             onChange={(e) => setSearch(e.target.value)}
             type="text"
@@ -46,9 +46,9 @@ function Home() {
           />
         </div>
         <div className="m-6 shadow-md">
-          <div className="flex justify-center items-center p-6">
+          <div className="flex justify-center items-center p-6 dark:bg-gray-600 dark:text-gray-200 rounded-md">
             <select
-              className="w-full outline-none"
+              className="w-full outline-none dark:bg-gray-600 dark:text-gray-200"
               onChange={handleSelectChange}
               value={param}
             >
@@ -63,7 +63,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap gap-7 p-5 justify-center">
+      <div className="flex flex-wrap gap-7 p-5 justify-center dark:bg-gray-700 dark:text-gray-200">
         {filteredCountries
           ?.filter((c) => param === "All" || c.continents.includes(param))
           .map((country) => (

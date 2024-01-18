@@ -13,7 +13,10 @@ export const countryApi = createApi({
         getAllCountry: builder.query({
             query: () => `all`,
         }),
+        getExactCountry: builder.query({
+            query: (name) => `name/${name}?fullText=true`,
+        }),
     }),
 });
 
-export const { useGetCountryByNameQuery, useGetCountryByRegionQuery,useGetAllCountryQuery } =countryApi;
+export const { useGetCountryByNameQuery, useGetCountryByRegionQuery,useGetAllCountryQuery , useGetExactCountryQuery } =countryApi;

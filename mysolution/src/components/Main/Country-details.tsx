@@ -5,13 +5,12 @@ import { useParams, useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-
 function Countrydetails() {
    const {name} = useParams()
    const {data: Country , isSuccess} = useGetExactCountryQuery(name)
     const router = useRouter();
   return (
-    <div className="m-12 overflow-x-hidden dark:bg-gray-600 dark:text-gray-200">
+    <div className="m-12 overflow-x-hidden dark:bg-gray-700 dark:text-gray-200">
       <button
         className="shadow-md px-5 py-2 mb-24 flex items-center gap-4"
         onClick={() => router.back()}
@@ -29,7 +28,7 @@ function Countrydetails() {
           />
 
           <div className="flex-grow flex flex-col justify-center">
-            <h1 className="font-bold mb-7 text-4xl">
+            <h1 className="font-bold mb-7 text-xl md:text-4xl">
               {Country[0]?.name?.common}
             </h1>
             <div className="flex flex-col md:flex-row justify-between">
